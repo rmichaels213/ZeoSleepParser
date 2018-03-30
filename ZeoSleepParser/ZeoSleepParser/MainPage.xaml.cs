@@ -1,4 +1,11 @@
-﻿using System;
+﻿/* ----------------------------------------
+Filename:		MainPage.xaml.cs
+Create Date:	03/30/2018
+Author:			Ryan Michaels
+Update Date:	03/30/2018
+---------------------------------------- */
+
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -25,6 +32,14 @@ namespace ZeoSleepParser
         public MainPage()
         {
             this.InitializeComponent();
-        }
+			
+			// Start things up!
+			StartMainApp();
+		}
+
+		public void StartMainApp()
+		{
+			errorText.Text = "This app has started.";
+		}
     }
 }
