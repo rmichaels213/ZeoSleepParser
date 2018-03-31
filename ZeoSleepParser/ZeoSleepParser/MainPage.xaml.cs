@@ -6,40 +6,75 @@ Update Date:	03/30/2018
 ---------------------------------------- */
 
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace ZeoSleepParser
 {
-    /// <summary>
-    /// An empty page that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    public sealed partial class MainPage : Page
-    {
-        public MainPage()
-        {
-            this.InitializeComponent();
-			
+	/// <summary>
+	/// An empty page that can be used on its own or navigated to within a Frame.
+	/// </summary>
+	public sealed partial class MainPage : Page
+	{
+
+		private Windows.Storage.StorageFile fileToParse;
+
+		public MainPage()
+		{
+			this.InitializeComponent();
+
 			// Start things up!
 			StartMainApp();
 		}
 
 		public void StartMainApp()
 		{
-			errorText.Text = "This app has started.";
+			textError.Text = "This app has started.";
 		}
-    }
+
+		/// <summary>
+		/// Open a file browser and select a file to parse.
+		/// </summary>
+		/// <param name="sender">Sending object.</param>
+		/// <param name="e">Event arguments.</param>
+		private async void buttonBrowse_Click(object sender, RoutedEventArgs e)
+		{
+			var picker = new Windows.Storage.Pickers.FileOpenPicker();
+			picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
+			picker.SuggestedStartLocation = Windows.Storage.Pickers.PickerLocationId.PicturesLibrary;
+			picker.FileTypeFilter.Add(".csv");
+
+			Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
+			if (file != null)
+			{
+				textError.Text = "Selected file: " + file.Name;
+				fileToParse = file;
+				textParse.Text = string.Empty;
+			}
+			else
+			{
+				textError.Text = "Operation cancelled.";
+				fileToParse = null;
+				textParse.Text = string.Empty;
+			}
+		}
+
+		/// <summary>
+		/// Parse selected file.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private async void ButtonParse_Click(object sender, RoutedEventArgs e)
+		{
+			if (fileToParse == null )
+			{
+				textError.Text = "No file selected.";
+				textParse.Text = string.Empty;
+				return;
+			}
+
+			string fileText = await Windows.Storage.FileIO.ReadTextAsync(fileToParse);
+			textParse.Text = fileText;
+		}
+	}
 }
