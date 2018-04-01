@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="ZeoSleepParser.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ZeoSleepParser"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" MinHeight="213" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock x:ConnectionId='1' Grid.Row="1" Grid.Column="0" x:Name="textError" HorizontalAlignment="Left" Margin="25,90,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Padding="10,10,10,10" Foreground="White" MinWidth="400" Width="400"/>
+        <TextBlock x:ConnectionId='2' Grid.Row="0" Grid.Column="0" x:Name="textTitle" Foreground="#FF041423" HorizontalAlignment="Left" Height="60" Margin="25,35,0,0" Text="Zeo Sleep Parser" TextWrapping="Wrap" VerticalAlignment="Top" Width="456" FontSize="36" />
+        <Border x:ConnectionId='3' Grid.Row="1" Grid.Column="0" x:Name="borderErrorText" BorderBrush="Black" HorizontalAlignment="Left" Margin="25,90,0,0" VerticalAlignment="Top" Background="#FFA2F1A9" BorderThickness="1,1,1,1" Canvas.ZIndex="-10" MinWidth="400" Width="400" Height="120"/>
+        <Button x:ConnectionId='4' Grid.Row="1" Grid.Column="0" x:Name="buttonBrowse" Content="Browse" HorizontalAlignment="Left" Margin="25,37,0,0" VerticalAlignment="Top" Width="75" Height="35"                           />
+        <Button x:ConnectionId='5' Grid.Row="1" Grid.Column="0" x:Name="buttonParse" Content="Parse" HorizontalAlignment="Left" Margin="113,35,0,0" VerticalAlignment="Top" Width="75" Height="35"                          />
+        <ProgressBar Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" Height="6" Margin="25,77,0,0" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:ConnectionId='6' x:Name="textParse" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="25,318,-419,-702" Grid.RowSpan="3" Text="Nothing parsed yet." TextWrapping="Wrap" VerticalAlignment="Top" Width="400" MinWidth="400" ScrollViewer.VerticalScrollBarVisibility="Auto" FontSize="8"/>
+    </Grid>
+</Page>
+
