@@ -1,0 +1,1 @@
+C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser.csproj;arm
