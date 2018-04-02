@@ -168,6 +168,9 @@
   <data name="IO_StreamTooLong" xml:space="preserve">
     <value>Stream was too long.</value>
   </data>
+  <data name="ObjectDisposed_StreamClosed" xml:space="preserve">
+    <value>Cannot access a closed Stream.</value>
+  </data>
   <data name="InvalidOperation_CalledTwice" xml:space="preserve">
     <value>The method cannot be called twice on the same instance.</value>
   </data>

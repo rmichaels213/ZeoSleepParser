@@ -1,4 +1,17 @@
 WinMetadata\Windows.winmd
+app.config.transform
+MySqlCommand.xml
+MySqlCommandBuilder.xml
+MySqlConnection.xml
+MySqlConnectionStringBuilder.xml
+MySqlDataAdapter.xml
+MySqlDataReader.xml
+MySqlException.xml
+MySqlHelper.xml
+MySqlParameter.xml
+MySqlParameterCollection.xml
+MySqlTransaction.xml
+web.config.transform
 Assets\LockScreenLogo.scale-200.png
 Assets\SplashScreen.scale-200.png
 Assets\Square150x150Logo.scale-200.png
