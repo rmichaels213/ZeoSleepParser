@@ -2,7 +2,7 @@
 Filename:		MainPage.xaml.cs
 Create Date:	03/30/2018
 Author:			Ryan Michaels
-Update Date:	03/30/2018
+Update Date:	04/02/2018
 ---------------------------------------- */
 
 using System;
@@ -21,14 +21,14 @@ namespace ZeoSleepParser
 		private Windows.Storage.StorageFile fileToParse;
 
 		private List<string> header;
-		private List<string[]> data;
+		private List<ZeoNight> data;
 
 		public MainPage()
 		{
 			this.InitializeComponent();
 
 			header = new List<string>();
-			data = new List<string[]>();
+			data = new List<ZeoNight>();
 
 			// Start things up!
 			StartMainApp();
@@ -93,10 +93,12 @@ namespace ZeoSleepParser
 
 			int lastPosition = 0;
 			int position = 0;
+			int columnNumber = 0;
 
 			int dataRow = 0;
 			int wordCount = 0;
 
+			ZeoNight localZeoNight = new ZeoNight();
 
 			textError.Text = "Starting to parse file.";
 			while ( position < fileLength)
@@ -109,10 +111,15 @@ namespace ZeoSleepParser
 					{
 						textError.Text = "Newline found";
 						isHeaderFound = true;
+						columnNumber = 0;
 
 						// Move the data row to the next
 						dataRow++;
 						position++;
+						lastPosition = position;
+
+						data.Add(localZeoNight);
+						localZeoNight = new ZeoNight();
 
 						continue;
 					}
@@ -121,6 +128,7 @@ namespace ZeoSleepParser
 				if (fileText[position] == DELIMETER)
 				{
 					textError.Text = "Found delimeter!";
+
 					if ( !isHeaderFound )
 					{
 						// Keep adding to header record if we haven't found the end yet
@@ -128,11 +136,30 @@ namespace ZeoSleepParser
 					}
 					else
 					{
+						string currentColumn = header[columnNumber];
+						string currentValue = fileText.Substring(lastPosition, position - lastPosition);
+
+						// Here is a data record, save it if we need it.
+						if (header[columnNumber] == "Sleep Date")
+						{
+							localZeoNight.SleepDate = Convert.ToDateTime(fileText.Substring(lastPosition, position - lastPosition));
+						}
+						if (header[columnNumber] == "Start of Night")
+						{
+							DateTime localDateTime = Convert.ToDateTime(fileText.Substring(lastPosition, position - lastPosition));
+							localZeoNight.StartTime = localDateTime.TimeOfDay;
+						}
+						if (header[columnNumber] == "Detailed Sleep Graph")
+						{
+							localZeoNight.RawReadings = fileText.Substring(lastPosition, position - lastPosition);
+						}
+
 						//data[dataRow].Add(fileText.Substring(lastPosition, position - lastPosition));
 					}
 
 					// Swap positions
 					lastPosition = position + 1;
+					columnNumber++;
 					wordCount++;
 				}
 
