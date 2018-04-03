@@ -46,6 +46,15 @@ namespace ZeoSleepParser
 		}
 
 		/// <summary>
+		/// Custom ToString functionality.
+		/// </summary>
+		/// <returns>Returns customs ToString value for ZeoNight.</returns>
+		public override string ToString()
+		{
+			return string.Format("Date: {0} - \nTime: {1} - \nData: {2}\n\n", SleepDate, StartTime, RawReadings );
+		}
+
+		/// <summary>
 		/// Gets or sets the sleep date property.
 		/// </summary>
 		public DateTime SleepDate

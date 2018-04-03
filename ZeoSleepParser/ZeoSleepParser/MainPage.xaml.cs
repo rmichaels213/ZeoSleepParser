@@ -88,6 +88,7 @@ namespace ZeoSleepParser
 			}
 
 			bool isHeaderFound = false;
+			bool isNewLineFound = false;
 
 			int fileLength = fileText.Length;
 
@@ -110,22 +111,11 @@ namespace ZeoSleepParser
 					if (fileText[position + 1] == NEWLINE_DELIMETER)
 					{
 						textError.Text = "Newline found";
-						isHeaderFound = true;
-						columnNumber = 0;
-
-						// Move the data row to the next
-						dataRow++;
-						position++;
-						lastPosition = position;
-
-						data.Add(localZeoNight);
-						localZeoNight = new ZeoNight();
-
-						continue;
+						isNewLineFound = true;
 					}
 				}
 
-				if (fileText[position] == DELIMETER)
+				if (fileText[position] == DELIMETER || isNewLineFound )
 				{
 					textError.Text = "Found delimeter!";
 
@@ -136,6 +126,12 @@ namespace ZeoSleepParser
 					}
 					else
 					{
+						if ( columnNumber >= header.Count )
+						{
+							// This is bad
+							continue;
+						}
+
 						string currentColumn = header[columnNumber];
 						string currentValue = fileText.Substring(lastPosition, position - lastPosition);
 
@@ -158,15 +154,43 @@ namespace ZeoSleepParser
 					}
 
 					// Swap positions
-					lastPosition = position + 1;
+					position++;
+					lastPosition = position;
+					
 					columnNumber++;
-					wordCount++;
+
+					if ( isNewLineFound )
+					{
+						if (isHeaderFound)
+						{
+							data.Add(localZeoNight);
+							localZeoNight = new ZeoNight();
+
+							dataRow++;
+						}
+
+						// Account for newline/return characters
+						position += 3;
+						lastPosition = position - 1;
+
+						isHeaderFound = true;
+						columnNumber = 0;
+						isNewLineFound = false;
+					}
+
+					continue;
 				}
 
 				position++;
 			}
 
 			textError.Text = "Parsing done!";
+
+			// Read out a summary
+			foreach ( ZeoNight night in data )
+			{
+				night.ToString();
+			}
 		}
 		
 		/// <summary>
@@ -182,30 +206,6 @@ namespace ZeoSleepParser
 			}
 
 			return await Windows.Storage.FileIO.ReadTextAsync(fileToParse);
-		}
-
-		private void UpdateParseText()
-		{
-			int parseTextPosition = 0;
-
-			switch (parseTextPosition)
-			{
-				case 0:
-					textError.Text = "Parsing";
-					break;
-				case 1:
-					textError.Text = "Parsing.";
-					break;
-				case 2:
-					textError.Text = "Parsing..";
-					break;
-				case 3:
-				default:
-					textError.Text = "Parsing...";
-					break;
-			}
-
-			parseTextPosition = parseTextPosition == 3 ? 0 : parseTextPosition++;
 		}
 	}
 }
