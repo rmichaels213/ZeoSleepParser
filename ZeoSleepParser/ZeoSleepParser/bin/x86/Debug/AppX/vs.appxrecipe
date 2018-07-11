@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>FFAD4CF927D48D382E437B734DBA0D2D3B8E079BA81D4C88BCE4F32E6BFF3264</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>613199C3881197877C2AD83A5E1DCB9EFF7E90D77E8324AE4FE3E5341B71E32C</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>97d3dc06-4fdf-4f96-a94c-849df2eba9a7_1.0.0.0_x86__1d30342v10jcc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>97d3dc06-4fdf-4f96-a94c-849df2eba9a7_1d30342v10jcc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>97d3dc06-4fdf-4f96-a94c-849df2eba9a7</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-02T12:11:06.650</Modified>
+      <Modified>2018-05-07T13:29:55.781</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\bin\x86\Debug\ZeoSleepParser.exe">
       <PackagePath>entrypoint\ZeoSleepParser.exe</PackagePath>
-      <Modified>2018-04-02T12:11:05.862</Modified>
+      <Modified>2018-05-07T13:29:55.356</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -131,9 +131,9 @@
       <PackagePath>MySql.Data.dll</PackagePath>
       <Modified>2018-01-18T13:59:06.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
-      <Modified>2016-06-14T02:06:14.000</Modified>
+      <Modified>2016-06-14T03:06:14.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\runtime.any.system.collections\4.3.0\lib\netcore50\System.Collections.dll">
       <PackagePath>System.Collections.dll</PackagePath>
@@ -311,13 +311,13 @@
       <PackagePath>System.Diagnostics.StackTrace.dll</PackagePath>
       <Modified>2016-07-01T19:48:16.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.diagnostics.textwritertracelistener\4.3.0\lib\netstandard1.3\System.Diagnostics.TextWriterTraceListener.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.diagnostics.textwritertracelistener\4.3.0\lib\netstandard1.3\System.Diagnostics.TextWriterTraceListener.dll">
       <PackagePath>System.Diagnostics.TextWriterTraceListener.dll</PackagePath>
-      <Modified>2016-11-05T07:55:54.000</Modified>
+      <Modified>2016-11-05T08:55:54.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.diagnostics.tracesource\4.3.0\runtimes\win\lib\netstandard1.3\System.Diagnostics.TraceSource.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.diagnostics.tracesource\4.3.0\runtimes\win\lib\netstandard1.3\System.Diagnostics.TraceSource.dll">
       <PackagePath>System.Diagnostics.TraceSource.dll</PackagePath>
-      <Modified>2016-11-05T07:55:58.000</Modified>
+      <Modified>2016-11-05T08:55:58.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.dynamic.runtime\4.3.0\lib\netcore50\System.Dynamic.Runtime.dll">
       <PackagePath>System.Dynamic.Runtime.dll</PackagePath>
@@ -684,11 +684,11 @@
     <AppxPackagedFile Include="C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-02T12:11:06.423</Modified>
+      <Modified>2018-05-07T12:56:06.408</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\Documents\GitHub\ZeoSleepParser\ZeoSleepParser\ZeoSleepParser\bin\x86\Debug\Core\ZeoSleepParser.exe">
       <PackagePath>ZeoSleepParser.exe</PackagePath>
-      <Modified>2018-04-02T12:11:06.645</Modified>
+      <Modified>2018-05-07T13:29:55.776</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

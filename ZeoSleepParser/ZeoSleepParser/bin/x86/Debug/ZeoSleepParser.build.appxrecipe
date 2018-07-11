@@ -97,7 +97,7 @@
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\mysql.data\6.10.6\lib\netstandard1.3\MySql.Data.dll">
       <PackagePath>MySql.Data.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\newtonsoft.json\9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\runtime.any.system.collections\4.3.0\lib\netcore50\System.Collections.dll">
@@ -232,10 +232,10 @@
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.diagnostics.stacktrace\4.0.2\lib\netstandard1.3\System.Diagnostics.StackTrace.dll">
       <PackagePath>System.Diagnostics.StackTrace.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.diagnostics.textwritertracelistener\4.3.0\lib\netstandard1.3\System.Diagnostics.TextWriterTraceListener.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.diagnostics.textwritertracelistener\4.3.0\lib\netstandard1.3\System.Diagnostics.TextWriterTraceListener.dll">
       <PackagePath>System.Diagnostics.TextWriterTraceListener.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\NuGetPackages\system.diagnostics.tracesource\4.3.0\runtimes\win\lib\netstandard1.3\System.Diagnostics.TraceSource.dll">
+    <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.diagnostics.tracesource\4.3.0\runtimes\win\lib\netstandard1.3\System.Diagnostics.TraceSource.dll">
       <PackagePath>System.Diagnostics.TraceSource.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\rmich\.nuget\packages\system.dynamic.runtime\4.3.0\lib\netcore50\System.Dynamic.Runtime.dll">
